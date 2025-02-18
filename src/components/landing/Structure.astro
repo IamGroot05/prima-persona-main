@@ -1,3 +1,29 @@
+---
+import ProjectGallery from "./ProjectGallery.astro";
+
+const slides = [
+  {
+    headerText: "Monomod",
+    title: "Design & development subscriptions for startups.",
+    description: "Monomod streamlines the design process with a fixed monthly rate and limitless design requests. Say goodbye to phone calls and extensive contracts; reach out to Monomod directly at any time. Embrace flexibility, pause or terminate your subscription whenever you need.",
+    image: "/images/monomod.png",
+  },
+  {
+    headerText: "Astro UI",
+    title: "Build blazing-fast sites with Astro and Tailwind.",
+    description: "Astro UI simplifies modern web development with an ultra-fast framework and Tailwind CSS. Enjoy seamless integration, optimized performance, and scalable architecture. Create highly responsive and accessible UIs without the hassle of complex tooling.",
+    image: "/images/monomod.png",
+  },
+  {
+    headerText: "Web Design",
+    title: "Modern, accessible, and performance-first design.",
+    description: "Web Design focuses on user-centric principles, delivering beautiful and functional experiences. With a commitment to accessibility and performance, every design adapts seamlessly across devices. Build visually compelling, high-speed websites with ease.",
+    image: "/images/monomod.png",
+  },
+];
+
+---
+
 <section>
   <div class="p-4">
     <div
@@ -211,7 +237,7 @@
           </a>
         </div>
       </div>
-      <a
+      <!-- <a
         href="https://monomod.studio/"
         class="ring-1 lg:row-span-2 flex flex-col justify-between group hover:ring-primary/10 dark:hover:ring-white/20 duration-300 h-full dark:ring-white/10 ring-primary/5 lg:row-start-2 md:grid-cols-2 md:grid lg:gap-0 md:items-center md:gap-12 lg:grid-cols-none lg:col-start-2 lg:col-span-2 rounded-3xl p-8 bg-white dark:bg-secondary shadow-xl dark:shadow-thick"
       >
@@ -237,9 +263,10 @@
             src="/images/monomod.png"
             class="rounded-2xl group-hover:ring-white/20 duration-300 invert dark:invert-0 aspect-[4/4] bg-primary/5 dark:bg-primary ring-1 ring-white/10 object-cover"
             alt=""
-          />
-        </div>
-      </a>
+            />
+          </div>
+        </a> -->
+          <ProjectGallery slides={slides} />
       <div
         class="ring-1 dark:ring-white/10 ring-primary/5 flex flex-col justify-between items-center rounded-3xl shadow-xl dark:shadow-thick p-8 bg-white dark:bg-secondary overflow-hidden text-center lg:text-left"
       >

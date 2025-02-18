@@ -1,0 +1,92 @@
+---
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+
+
+const slides = Astro.props.slides;
+---
+
+<div class="ring-1 lg:row-span-2 flex flex-col justify-between group hover:ring-primary/10 dark:hover:ring-white/20 duration-300 h-full dark:ring-white/10 ring-primary/5 lg:row-start-2 md:grid-cols-2 md:grid lg:gap-0 md:items-center md:gap-12 lg:grid-cols-none lg:col-start-2 lg:col-span-2 rounded-3xl p-8 bg-white dark:bg-secondary shadow-xl dark:shadow-thick">
+  <div class="swiper mySwiper w-full h-full">
+    <div class="swiper-wrapper">
+      {slides.map((slide, index) => (
+        <div class="swiper-slide" key={index}>
+          <a
+            href={slide.link}
+          >
+            <div>
+              <p class="text-xl tracking-tight font-medium text-primary dark:text-white md:text-6xl">
+                {slide.headerText}
+              </p>
+              <p class="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+                {slide.title}
+                <br />
+                <br />
+                {slide.description}
+              </p>
+            </div>
+            <div class="mt-8">
+              <img
+                src={slide.image}
+                class="rounded-2xl group-hover:ring-white/20 duration-300 invert dark:invert-0 aspect-[4/4] bg-primary/5 dark:bg-primary ring-1 ring-white/10 object-cover"
+                alt={slide.title}
+              />
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <!-- <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
+  </div>
+</div>
+
+<style>
+  /* Dynamic Pagination Styling */
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #ff5722; /* Custom active color */
+    transform: scale(1.3);
+    opacity: 1;
+  }
+
+  /* Custom Navigation */
+  .swiper-button-next, .swiper-button-prev {
+    color: #ff5722; /* Change color */
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Pagination, Autoplay } from "swiper/modules";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".mySwiper", {
+      loop: true,
+      grabCursor: true,
+      slidesPerView: 1,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true, // Enable dynamic bullets
+      },
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      modules: [Pagination,Autoplay],
+    });
+  });
+</script>
