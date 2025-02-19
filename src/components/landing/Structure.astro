@@ -1,4 +1,5 @@
 ---
+import ExperienceTimeline from "./ExperienceTimeline.astro";
 import ProjectGallery from "./ProjectGallery.astro";
 
 const slides = [
@@ -353,12 +354,12 @@ const slides = [
         <div class="-mr-24">
           <img
             src="/images/lexington.png"
-            class="rounded-2xl object-cover ring-1 h-64 w-full lg:h-auto dark:ring-white/10 ring-primary/5 bg-tertiary"
+            class="rounded-2xl object-cover ring-1 h-60 w-full lg:h-auto dark:ring-white/10 ring-primary/5 bg-tertiary"
             alt=""
           />
         </div>
         <div class="mt-8">
-          <div class="flex flex-wrap">
+          <!-- <div class="flex flex-wrap">
             <div
               class="flex items-center text-sm font-medium text-primary dark:text-white"
             >
@@ -403,8 +404,9 @@ const slides = [
               </svg>
               <span class="ml-2.5"> Tailwind CSS</span>
             </div>
-          </div>
-          <p
+          </div> -->
+          <ExperienceTimeline/>
+          <!-- <p
             class="ext-xl tracking-tight font-medium text-primary dark:text-white md:text-6xl mt-6"
           >
             Lorem prome
@@ -413,7 +415,7 @@ const slides = [
             Free and premium multipage themes and UI Kits for freelancers,
             developers, businesses, and personal use. Beautifully crafted with
             Astro.js, and Tailwind CSS — Simple & easy to customise.
-          </p>
+          </p> -->
         </div>
       </a>
       <div
